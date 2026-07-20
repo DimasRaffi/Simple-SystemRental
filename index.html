@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Box</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen font-sans">
+    <nav class="flex justify-between items-center bg-gray-950 px-8 py-4 border-b border-gray-800 shadow-lg">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl">
+                🚗
+            </span>
+            <h1 class="text-xl font-bold tracking-wider text-blue-400">
+                GARASI <span class="text-white">RAFFI</span>
+            </h1>
+        </div>
+        <div class="flex items-center gap-3 bg-gray-900 px-4 py-2 rounded-full border border-gray-800 text-sm">
+            <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
+            <span class="text-sm font-medium text-gray-350">Admin: Dimas Raffi</span>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-8">
+        <section class="flex flex-col md:flex-row items-center gap-12 py-12 border-b border-gray-800">
+            <div class="flex-1 space-y-6">
+                <div class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full border border-blue-500/20">
+                    Sistem Manajemen PBO V2.0
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                    Mau Rental Mobil Apa Hari Ini, <span class="text-blue-500">Dimas?</span>
+                </h2>
+                <p class="text-gray-400 text-lg Leading-relaxed">
+                    Kelola garasi kendaraan rentalmu secara real-time. Pantau ketersediaan unit mobil dan motor dengan proteksi data enkapsulasi terbaik.
+                </p>
+                <div class="flex gap-4 pt-2">
+                    <a href="#daftar-armada" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg shadow-blue-600/20 transition-all">
+                        Lihat Garasi ↓     
+                    </a>
+                    <a href="#form-tambah-unit" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium px-6 py-3 rounded-lg border border-gray-700 transition-all">
+                        + Tambah Unit
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 w-full flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl"></div>
+                    <img src="/img/car-1.jpg" alt="Ilustrasi Mobil Rental" class="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(59,130,246,0.3)]">
+                </div>
+            </div>
+        </section>
+        <section class="py-12" id="daftar-armada">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold tracking-tight text-white">Daftar Armada Garasi</h3>
+                <p class="text-sm text-gray-400 mt-1">Status unit kendaraan yang terdaftar dalam sistem PBO.</p>
+            </div>
+            <div id="grid-kendaraan" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-md hover:border-blue-500/50 transition-all flex flex-col">
+                    <div class="relative w-full h-48 bg-gray-900 flex items-center justify-center overflow-hidden">
+                        <img src="img/car-2.jpg" alt="Porsche" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-green-500/15 text-green-500 text-xs font-semibold px-2.5 py-1 rounded-full border border-green-500/25">
+                            Tersedia
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Mobil</span>
+                            <h4 class="text-lg font-bold text-white mt-0.5">Porsche</h4>
+                            <p class="text-gray-400 text-sm mt-2">Tarif: <span class="font-medium text-gray-300">Rp20.000.000</span>/ hari</p>
+                        </div>
+                        <div class="bg-gray-900/50 p-3 rounded-lg border border-gray-900 text-xs text-gray-500">
+                            🚩<span class="font-medium text-gray-400">Fitur:</span> Termasuk Sopir + BBM
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 rounded-lg transition-all">
+                            Sewa Kendaraan
+                        </button>
+                    </div>
+                </div>       
+            </div>
+        </section>
+        <section class="py-12 max-w-2xl mx-auto bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-xl" id="form-tambah-unit">
+            <div class="mb-8 text-center">
+                <div class="inline-block bg-blue-500/10 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/20 mb-3">
+                    Input Data Garasi
+                </div>
+                <h3 class="text-xl font-bold text-white">Tambah Unit Kendaraan Baru</h3>
+                <p class="text-sm text-gray-400 mt-1">Masukkan detail Spesifikasi objek ke dalam sistem database</p>
+            </div>
+            <form action="#" id="form-tambah-unit" class="space-y-5">
+                <div class="flex flex-col gap-2">
+                    <label for="#" class="text-xs font-semibold uppercase tracking-wider text-gray-400">Nama Kendaraan</label>
+                    <input type="text" name="" id="input-nama" placeholder="Contoh: Toyota Raize, Honda PCX" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-all">
+                </div>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1 flex flex-col gap-2">
+                        <label for="" class="text-xs font-semibold uppercase tracking-wider text-gray-400">Jenis Armada</label>
+                        <select name="" id="input-jenis" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transtion-all">
+                            <option value="Mobil">Mobil</option>
+                            <option value="Motor">Motor</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2">
+                        <label for="#" class="text-xs font-semibold uppercase tracking-wider text-gray-400">Tarif / Hari (Rp)</label>
+                        <input type="number" name="" id="input-tarif" placeholder="Contoh: 500000" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-all">
+                    </div>
+
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="" class="text-xs font-semibold uppercase tracking-wider text-gray-400">Fasilitas / Fitur Unik</label>
+                    <input type="text" name="" id="input-fitur" placeholder="Contoh: Include Sopir, 2 Helm SNI" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-all">
+                </div>
+                <div class="pt-2">
+                    <button type="button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg shadow-lg shadow-blue-600/10 transition-all">
+                        Simpan ke Garasi
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

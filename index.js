@@ -50,7 +50,7 @@ function renderKoleksi(){
             </div>
             <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
                  <div>
-                    <span class="text-xs font-bold uppercase tracking-wider ${item.jenis === 'Mobil' ? 'text-blue-400' : 'text-purple-400'}">${item.jenis}</span>
+                    <span class="text-xs font-bold uppercase tracking-wider ${item.jenis === 'Mobil' ? 'text-blue-400' : 'text-orange-500'}">${item.jenis}</span>
                     <h4 class="text-lg font-bold text-white mt-0.5">${item.nama}</h4>
                     <p class="text-gray-400 text-sm mt-2">Tarif: <span class="font-medium text-gray-300">Rp${item.tarif.toLocaleString('id-ID')}</span>/ hari</p>
                 </div>

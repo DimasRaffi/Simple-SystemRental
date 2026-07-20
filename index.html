@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple System Rental</title>
+    <title>GORENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <!-- Konfigurasi Tailwind supaya font bisa dipakai sebagai class -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],   // jadi default via font-sans
+                        outfit: ['Outfit', 'sans-serif'], // bisa juga pakai font-outfit
+                        cabin: ['Cabin', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen font-sans">
-    <nav class="flex justify-between items-center bg-gray-950 px-8 py-4 border-b border-gray-800 shadow-lg">
+<body class="bg-gray-900 text-gray-100 min-h-screen font-outfit">
+    <nav class="flex justify-between items-center bg-gray-900 px-16 py-4 border-b border-gray-800 shadow-lg">
         <div class="flex items-center gap-2">
-            <span class="text-2xl">
-                🚗
-            </span>
-            <h1 class="text-xl font-bold tracking-wider text-blue-400">
-                GARASI <span class="text-white">RAFFI</span>
+            <h1 class="text-xl font-bold text-blue-400">
+                GOO<span class="text-white">RENT</span>
             </h1>
         </div>
         <div class="flex items-center gap-3 bg-gray-900 px-4 py-2 rounded-full border border-gray-800 text-sm">
-            <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
-            <span class="text-sm font-medium text-gray-350">Admin: Dimas Raffi</span>
+            <div class="w-2.5 h-2.5 bg-purple-500 rounded-full animate-pulse"></div>
+            <span class="text-sm font-medium text-gray-300">Admin: <span class="text-blue-300 font-semibold">Dimas Raffi</span></span>
         </div>
     </nav>
 
@@ -27,13 +43,13 @@
         <section class="flex flex-col md:flex-row items-center gap-12 py-12 border-b border-gray-800">
             <div class="flex-1 space-y-6">
                 <div class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full border border-blue-500/20">
-                    Sistem Manajemen PBO V2.0
+                    Sistem Rental Kendaraan
                 </div>
                 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
                     Mau Rental Mobil Apa Hari Ini, <span class="text-blue-500">Dimas?</span>
                 </h2>
                 <p class="text-gray-400 text-lg Leading-relaxed">
-                    Kelola garasi kendaraan rentalmu secara real-time. Pantau ketersediaan unit mobil dan motor dengan proteksi data enkapsulasi terbaik.
+                    Kelola garasi kendaraan rentalmu secara real-time. Pantau ketersediaan unit mobil dan motor dengan kualitas terbaik.
                 </p>
                 <div class="flex gap-4 pt-2">
                     <a href="#daftar-armada" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg shadow-blue-600/20 transition-all">
@@ -54,7 +70,7 @@
         <section class="py-12" id="daftar-armada">
             <div class="mb-8">
                 <h3 class="text-2xl font-bold tracking-tight text-white">Daftar Armada Garasi</h3>
-                <p class="text-sm text-gray-400 mt-1">Status unit kendaraan yang terdaftar dalam sistem PBO.</p>
+                <p class="text-sm text-gray-400 mt-1">Status unit kendaraan yang terdaftar dalam sistem ini.</p>
             </div>
             <div id="grid-kendaraan" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-md hover:border-blue-500/50 transition-all flex flex-col">
@@ -82,7 +98,7 @@
         </section>
         <section class="py-12 max-w-2xl mx-auto bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-xl" id="form-tambah-unit">
             <div class="mb-8 text-center">
-                <div class="inline-block bg-blue-500/10 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/20 mb-3">
+                <div class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500/20 mb-3">
                     Input Data Garasi
                 </div>
                 <h3 class="text-xl font-bold text-white">Tambah Unit Kendaraan Baru</h3>

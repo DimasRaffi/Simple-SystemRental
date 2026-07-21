@@ -8,7 +8,7 @@ let daftarKendaraan = [
         tarif: 20000000,
         fitur: "Termasuk Sopir + BBM",
         status: "Tersedia",
-        gambar: "img/car-2.jpg"
+        gambar: "img/car-2.webp"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ let daftarKendaraan = [
         tarif: 12000000,
         fitur: "Lepas Kunci Only",
         status: "Dirental",
-        gambar: "img/car-3.jpg"
+        gambar: "img/car-3.webp"
     },
     {
         id: 3,
@@ -26,7 +26,7 @@ let daftarKendaraan = [
         tarif: 4500000,
         fitur: "1 Helm + BBM",
         status: "Tersedia",
-        gambar: "img/motor-1.jpg"
+        gambar: "img/motor-1.webp"
     }
 ]
 

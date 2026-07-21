@@ -252,30 +252,3 @@ function switchMode(){
 
     renderKoleksi();
 }
-
-function switchTheme() {
-    isDarkmode = !isDarkmode;
-
-    const bodyElemen = document.body;
-    const iconTheme = document.getElementById("icon-theme");
-    const textTheme = document.getElementById("text-theme");
-
-    if (isDarkmode){
-        bodyElemen.classList.remove("bg-gray-100", "text-gray-900");
-        bodyElemen.classList.add("bg-gray-900", "text-gray-100");
-
-        if (iconTheme) iconTheme.innerText = "🌙";
-        if (textTheme) textTheme.innerText = "Dark";
-
-        alert("🌙 Switched to Dark Mode");
-    } else {
-        // --- MASUK KE LIGHT MODE ---
-        bodyElemen.classList.remove("bg-gray-900", "text-gray-100");
-        bodyElemen.classList.add("bg-gray-100", "text-gray-900");
-
-        if (iconTheme) iconTheme.innerText = "☀️";
-        if (textTheme) textTheme.innerText = "Light";
-
-        alert("☀️ Switched to Light Mode");
-    }
-}

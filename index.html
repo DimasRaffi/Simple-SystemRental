@@ -27,26 +27,32 @@
     </script>
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen font-outfit">
-    <nav class="flex justify-between items-center bg-gray-900 px-16 py-4 border-b border-gray-800 shadow-lg">
+    <nav class="flex justify-between items-center bg-gray-900 px-12 py-4 border-b border-gray-800 shadow-lg">
         <div class="flex items-center gap-2">
             <h1 class="text-xl font-bold text-blue-400">
                 GOO<span class="text-white">RENT</span>
             </h1>
         </div>
-        <div class="flex items-center gap-3 bg-gray-900 px-4 py-2 rounded-full border border-gray-800 text-sm">
-            <div class="w-2.5 h-2.5 bg-blue-400 rounded-full animate-pulse"></div>
-            <span class="text-sm font-medium text-gray-300">Admin: <span class="text-blue-300 font-semibold">Dimas Raffi</span></span>
-        </div>
+        <div class="flex gap-2">
+            <button id="btn-mode" onclick="switchMode()" class="flex items-center gap-3 bg-gray-900 px-4 py-2 rounded-full border border-gray-800 hover:border-blue-800 text-sm transition-all cursor-pointer">
+                <div id="indikator-mode" class="w-2.5 h-2.5 bg-blue-400 rounded-full animate-pulse"></div>
+                <span class="text-sm font-medium text-gray-300">Mode : <span class="text-blue-300 font-semibold" id="text-mode">User</span></span>
+            </button>
+            <!-- <button class="flex items-center gap-2 bg-gray-900 px-4 py-2 rounded-full border border-gray-800 hover:border-blue-800 text-sm transition-all cursor-pointer" id="btn-theme" onclick="switchTheme()">
+                <span id="icon-theme">🌙</span>
+                <span id="text-theme" class="font-semibold text-blue-300">Dark</span>
+            </button> -->
+        </div> 
     </nav>
 
     <main class="max-w-7xl mx-auto p-8">
         <section class="flex flex-col md:flex-row items-center gap-12 py-12 border-b border-gray-800">
             <div class="flex-1 space-y-6">
                 <div class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full border border-blue-500/20">
-                    Sistem Rental Kendaraan
+                    GOORENT V1.0
                 </div>
                 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                    Mau Rental Mobil Apa Hari Ini, <span class="text-blue-500">Dimas?</span>
+                    Sistem Manajemen Rental Kendaraan Sederhana Berbasis, <span class="text-blue-500">Real-time</span>
                 </h2>
                 <p class="text-gray-400 text-lg Leading-relaxed">
                     Kelola garasi kendaraan rentalmu secara real-time. Pantau ketersediaan unit mobil dan motor dengan kualitas terbaik.
@@ -55,7 +61,7 @@
                     <a href="#daftar-armada" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg shadow-blue-600/20 transition-all">
                         Lihat Garasi ↓     
                     </a>
-                    <a href="#form-tambah-unit" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium px-6 py-3 rounded-lg border border-gray-700 transition-all">
+                    <a href="#form-tambah-unit" id="tambah-unit" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium px-6 py-3 rounded-lg border border-gray-700 transition-all hidden">
                         + Tambah Unit
                     </a>
                 </div>
@@ -96,7 +102,7 @@
                 </div>       
             </div>
         </section>
-        <section class="py-12 max-w-2xl mx-auto bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-xl" id="form-tambah-unit">
+        <section class="py-12 max-w-2xl mx-auto bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-xl hidden" id="form-tambah-unit">
             <div class="mb-8 text-center">
                 <div class="inline-block bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500/20 mb-3">
                     Input Data Garasi
@@ -128,6 +134,10 @@
                     <label for="" class="text-xs font-semibold uppercase tracking-wider text-gray-400">Fasilitas / Fitur Unik</label>
                     <input type="text" name="" id="input-fitur" placeholder="Contoh: Include Sopir, 2 Helm SNI" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-all">
                 </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-400 mb-2 uppercase">Upload Gambar Unit</label>
+                    <input type="file" id="input-gambar" accept="image/*" class="w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
+                </div>
                 <div class="pt-2">
                     <button type="button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg shadow-lg shadow-blue-600/10 transition-all">
                         Simpan ke Garasi
@@ -136,6 +146,17 @@
             </form>
         </section>
     </main>
+    <footer class="bg-gray-900 border-t border-gray-800 py-8 mt-20 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h3 class="text-base font-bold text-white flex" items-center gap-2><span class="text-blue-400">GOO</span>RENT</h3>
+                <p class="text-xs text-gray-500 mt-1">Sistem Manajemen Rental Kendaraan Sederhana Berbasis Web & Object Oriented Programming</p>
+            </div>
+            <div class="text-xs text-gray-500 text-center md:text-right">
+                <p>Copyright &copy; 2026 <span class="text-blue-400 font-semibold">Dimas Raffi</span>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

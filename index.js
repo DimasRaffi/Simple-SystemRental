@@ -30,6 +30,23 @@ let daftarKendaraan = [
     }
 ]
 
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+
+    if (preloader) {
+        // Tahan loader selama 2000ms (2 detik) persis seperti di React tadi
+        setTimeout(() => {
+            // Beri efek hilang perlahan (fade-out)
+            preloader.classList.add("opacity-0", "pointer-events-none");
+
+            // Setelah animasi hilang selesai, buang elemen agar tidak menutupi tombol
+            setTimeout(() => {
+                preloader.style.display = "none";
+            }, 500);
+        }, 2000); 
+    }
+});
+
 function renderKoleksi() {
     const wadahGrid = document.getElementById("grid-kendaraan");
     if (!wadahGrid) return;
